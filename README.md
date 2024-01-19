@@ -27,7 +27,7 @@ set PORT number
 # Go Terminal
 npm start
 ```
-Your Project is running at the declared PORT number
+Your Project is running at http://localhost:3050/
 
 ## Contributing
 
