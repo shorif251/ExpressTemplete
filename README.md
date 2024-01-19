@@ -21,7 +21,8 @@ npm install
 
 
 # Create .env file
-set PORT number 
+set PORT number
+# PORT=3050
 
 # Go Terminal
 npm start
