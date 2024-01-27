@@ -2,6 +2,7 @@ const express = require('express');
 const {
  UserFind, UserCreate, UserUpdate, UserDelete, UserFindById,
 } = require('../controller/userController');
+const { multerErrorHandler, upload } = require('../middleware/multerHandler');
 
 const router = express.Router();
 
@@ -9,10 +10,12 @@ router.get('/users', UserFind);
 
 router.get('/users/:id', UserFindById);
 
-router.post('/users', UserCreate);
+router.post('/users', upload.single('keyName'), UserCreate); // upload single photo
 
-router.get('/users/:id', UserUpdate);
+router.put('/users/', UserUpdate);
 
-router.get('/users/:id', UserDelete);
+router.delete('/users/:id', UserDelete);
+
+router.use(multerErrorHandler);
 
 module.exports = router;
